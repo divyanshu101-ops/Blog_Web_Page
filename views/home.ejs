@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+
+<div class="container">
+
+  <div class="hero fade-in">
+    <h1>Build. Learn. Share.</h1>
+    <p>
+      A modern blogging platform crafted with Node.js, Express & EJS —
+      focused on clean design and simplicity.
+    </p>
+    <a href="/compose">Start Writing →</a>
+  </div>
+
+  <% if (posts.length === 0) { %>
+    <p>No posts available yet.</p>
+  <% } else { %>
+
+    <% posts.forEach((post) => { %>
+      <div class="card fade-in">
+        <h2>
+          <a href="/posts/<%= post.id %>">
+            <%= post.title %>
+          </a>
+        </h2>
+
+        <p><%= post.content.substring(0, 120) %>...</p>
+
+        <div class="tags">
+          <% post.tags.forEach(tag => { %>
+            <span class="tag"><%= tag %></span>
+          <% }) %>
+        </div>
+
+        <form action="/delete/<%= post.id %>" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    <% }) %>
+
+  <% } %>
+
+</div>
+
+<%- include("partials/footer") %>

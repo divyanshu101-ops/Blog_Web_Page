@@ -1,0 +1,310 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 15px 0;
+  transition: background-color 0.3s ease;
+}
+
+.nav-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #111827;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+  margin-left: 20px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  margin-bottom: 60px;
+  transition: background 0.3s ease;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #6b7280;
+}
+
+.hero a {
+  display: inline-block;
+  padding: 12px 22px;
+  background-color: #111827;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.hero a:hover {
+  background-color: #374151;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+  background-color: #ffffff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card a {
+  text-decoration: none;
+  color: #111827;
+}
+
+.card p {
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   TAGS
+========================= */
+.tags {
+  margin-bottom: 15px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e5e7eb;
+  color: #374151;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  background-color: #ef4444;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   FORMS
+========================= */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* =========================
+   POST PAGE
+========================= */
+.post-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.post-date {
+  color: #9ca3af;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.post-content {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  color: #9ca3af;
+  font-size: 14px;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 60px;
+}
+
+/* =========================
+   FADE-IN ANIMATION
+========================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+body.dark {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+body.dark .navbar {
+  background-color: #1f2937;
+  border-bottom: 1px solid #374151;
+}
+
+body.dark .card {
+  background-color: #1f2937;
+  box-shadow: none;
+}
+
+body.dark .card p,
+body.dark .hero p,
+body.dark .post-date {
+  color: #9ca3af;
+}
+
+body.dark .nav-links a {
+  color: #e5e7eb;
+}
+
+body.dark .hero {
+  background: linear-gradient(135deg, #1f2937, #111827);
+}
+
+body.dark .hero a {
+  background-color: #2563eb;
+}
+
+body.dark .tag {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .post-title {
+    font-size: 26px;
+  }
+
+  .nav-links a {
+    margin-left: 12px;
+  }
+}

@@ -1,0 +1,91 @@
+/* 
+When Express renders home.ejs, it becomes:
+header.ejs content
++
+home.ejs content
++
+footer.ejs content
+*/
+
+/* 
+If home.ejs looks like:
+include header
+page content
+include footer
+*/
+
+/* 
+<!DOCTYPE html>
+<html>
+<head>...</head>
+<body>
+
+<nav>...</nav>
+
+<h1>Welcome</h1>
+
+<footer>...</footer>
+
+</body>
+</html>
+
+So structurally, it is perfectly valid.
+This Pattern is Called:
+Layout composition or Template layout pattern
+Even production apps use this idea.
+*/
+
+/***
+Important Rule:::::
+This approach is correct only if:
+Every page includes header first
+Every page includes footer last
+If you forget footer include → broken HTML structure.
+
+So be consistent.
+***/
+
+/**** For iteration of array we use:
+<% posts.forEach((post) => { %>
+  <h2><%= post.title %></h2>
+  <p><%= post.content.substring(0, 100) %>...</p>
+<% }) %>
+****/
+
+/*** 
+What Is req.params?
+In Express, params (parameters) are values taken from the URL path.
+
+/posts/5
+Here:
+/posts → fixed route
+5 → dynamic value
+
+When you define route like:
+/posts/:id
+That :id is called a route parameter.
+
+What Is req.params Exactly?
+It is an object.
+***/
+
+/***
+We use POST routes to delete method because:
+
+ID uniquely identifies post
+POST changes server state
+req.params reads dynamic URL
+.filter() removes item cleanly
+Redirect prevents duplicate submission
+
+This is not random.
+This is structured backend thinking.
+***/
+
+/*
+app.use(express.static("public"));
+
+What Static Middleware Does
+When you enable static middleware, you are telling Express:
+“If a request matches a file inside the public folder, serve it automatically.”
+*/
